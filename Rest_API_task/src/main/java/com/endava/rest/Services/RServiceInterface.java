@@ -1,12 +1,16 @@
 package com.endava.rest.Services;
 
 import com.endava.rest.models.Issue;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseEntity;
 
 public interface RServiceInterface {
 
-    String getAllTasksByUsername(String user);
+    HttpHeaders getToken();
+    void setHttpHeaders(HttpHeaders httpHeaders);
+    ResponseEntity<String> getAllTasksByUsername(String user);
 
-    String getTaskById(int id);
+    ResponseEntity<String> getTaskById(int id);
 
     void createIssue(Issue issue);
 
